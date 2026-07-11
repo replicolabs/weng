@@ -1,0 +1,26 @@
+{
+  "name": "@weng/orchestrator",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:negotiate": "tsx scripts/test-negotiate.ts"
+  },
+  "dependencies": {
+    "@croo-network/sdk": "^0.2.1",
+    "better-sqlite3": "^12.11.1",
+    "dotenv": "^17.4.2",
+    "viem": "^2.54.3",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^26.1.0",
+    "tsx": "^4.23.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
+  }
+}

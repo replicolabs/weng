@@ -1,0 +1,15 @@
+{
+  "name": "weng",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Weng — CROO-callable agent converting USDC into self-custodied bond or S&P 500 positions",
+  "workspaces": [
+    "orchestrator",
+    "frontend"
+  ],
+  "scripts": {
+    "dev:orchestrator": "npm run dev --workspace orchestrator",
+    "test:orchestrator": "npm run test --workspace orchestrator",
+    "dev:frontend": "npm run dev --workspace frontend"
+  }
+}
