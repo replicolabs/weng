@@ -19,7 +19,10 @@ async function main() {
   const config = loadConfig();
   logger.info(`[weng] TRADING_MODE=${config.TRADING_MODE} fund_address=${config.CROO_AGENT_AA_WALLET_ADDRESS}`);
 
-  const db = openDb(new URL("../data/weng.db", import.meta.url).pathname);
+  // On Railway the local filesystem is wiped on every redeploy unless this
+  // points at a mounted Volume path (e.g. /data/weng.db via DB_PATH).
+  const dbPath = process.env.DB_PATH ?? new URL("../data/weng.db", import.meta.url).pathname;
+  const db = openDb(dbPath);
   reconcileOnBoot(db, logger);
 
   const client = buildCrooClient(config, logger);
